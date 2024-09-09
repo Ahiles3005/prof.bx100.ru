@@ -58,11 +58,11 @@ $delaydBasketItems = CSaleBasket::GetList(
                             </svg>
                             Скачать прайс
                         </button>
-                        <? if (CUser::IsAuthorized()): ?>
+                        <? if ($USER->IsAuthorized()): ?>
                             <a href="#"
                                class="ps-3 pe-3 header__button button button_secondary btn btn-primary btn-complite"
                                title="Открыть личный кабинет" data-bs-toggle="modal"
-                               data-bs-target="#personalModal"><?= CUser::GetFullName(); ?></a>
+                               data-bs-target="#personalModal"><?= $USER->GetFullName(); ?></a>
                         <? else: ?>
                             <? $APPLICATION->IncludeFile('components/customs/personalAccount/index.php'); ?>
                         <? endif; ?>

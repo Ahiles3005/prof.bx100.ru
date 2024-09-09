@@ -27,4 +27,4 @@ $arDefaultIso = array(
 );
 
 if (!defined('DEFAULT_ISO'))
-    define(DEFAULT_ISO, serialize($arDefaultIso));
+    define('DEFAULT_ISO', serialize($arDefaultIso));
