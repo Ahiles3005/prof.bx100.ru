@@ -1,0 +1,79 @@
+@import "../../../../../../../profnastil-redesign/src/scss/1-vendors/bootstrap-custom";@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.catalog-tags {
+  padding: var(--padding);
+  font-size: 1rem;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 -.56em -.56em 0;
+
+    &.collapse {
+      display: flex !important;
+    }
+
+    @include media-breakpoint-down(lg) {
+      min-height: 3.5em!important;
+
+      &.collapse {
+        position: relative;
+        max-height: 3.5em;
+        transition: max-height var(--transition-time) var(--transition-timing-function);
+        overflow: hidden;
+
+        &:not(.show):after {
+          position: absolute;
+          bottom: calc(var(--padding) * -1);
+          left: 0;
+          width: 100%;
+          height: 2.5em;
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 88.46%);
+          content: "";
+        }
+
+        &.show {
+          max-height: 100%;
+        }
+      }
+    }
+  }
+
+  &__item {
+    font-size: calc(1em - 2px) !important;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  &__show-all {
+    margin: 0 calc(1em - 2px + .56em) .56em 0 !important;
+  }
+
+  &__toggle {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    padding: 3px 20px;
+    margin: auto;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-bottom: 0;
+    border-radius: 1em 1em 0 0;
+
+    svg {
+      transition: transform var(--transition-time) var(--transition-timing-function);
+      transform: rotate(.25turn);
+      fill: var(--accent);
+    }
+
+    &[aria-expanded="true"] {
+      svg {
+        transform: rotate(.75turn);
+      }
+    }
+  }
+}

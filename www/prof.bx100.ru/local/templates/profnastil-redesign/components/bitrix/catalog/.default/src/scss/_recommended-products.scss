@@ -1,0 +1,10 @@
+.recommended-products {
+  font-size: 1rem;
+
+  &__title {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--black);
+    padding: 14px 18px 8px;
+  }
+}

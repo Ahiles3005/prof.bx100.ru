@@ -1,0 +1,67 @@
+@import "../../../../../../../profnastil-redesign/src/scss/2-helpers/mixins";
+
+.product-labels {
+  font-size: calc(1rem - 2px);
+
+  &__main {
+    display: flex;
+    margin-bottom: .75em;
+  }
+
+  &__item {
+    padding: 0 .6em;
+    background-color: var(--white);
+    border: 1px solid currentColor;
+    border-radius: var(--base-radius);
+    color: var(--accent);
+    font-weight: 600;
+    display: inline-block;
+
+    &_green {
+      color: var(--green);
+    }
+
+    &_orange {
+      color: var(--orange);
+    }
+  }
+
+  &__show-more {
+    position: relative;
+    padding: 0 .33em;
+    border: 1px solid var(--accent);
+    border-radius: var(--base-radius);
+    margin-left: .7em;
+    background-color: var(--white);
+
+    &[aria-expanded="true"] {
+      svg {
+        transform: rotate(.25turn);
+      }
+    }
+
+    svg {
+      transition: transform var(--transition-time) var(--transition-timing-function);
+      fill: var(--accent);
+    }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      color: var(--secondary);
+      font-weight: 600;
+      transform: translateX(1.5em);
+      content: "+" attr(data-count);
+    }
+
+    @include focus(focus-visible);
+  }
+
+  &__full {
+    li + li {
+      margin-top: .75em;
+    }
+  }
+}

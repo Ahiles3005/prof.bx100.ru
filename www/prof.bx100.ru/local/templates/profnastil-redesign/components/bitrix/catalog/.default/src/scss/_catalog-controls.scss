@@ -1,0 +1,29 @@
+@import "../../../../../../../profnastil-redesign/src/scss/1-vendors/bootstrap-custom";@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.catalog-controls {
+  font-size: calc(1em - 2px);
+  --padding: 1.4em;
+
+  &__bottom {
+    padding: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
+  }
+
+  &__sort {
+    font-weight: 600;
+
+    @include media-breakpoint-down(lg) {
+      bottom: calc((var(--padding) * -1) - 1.5em);
+      position: absolute;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.catalog-item {
+  $self: &;
+  --padding-top: 0.64em;
+  --padding-horizontal: 1em;
+  --padding-bottom: 1.4em;
+
+  position: relative;
+  padding: var(--padding-top) var(--padding-horizontal) var(--padding-bottom);
+  border: 1px solid transparent;
+  font-size: 1rem;
+  transition: border-color var(--transition-time);
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    border-color: var(--border-color);
+  }
+
+  &__article {
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  &__labels {
+    position: absolute;
+    top: var(--padding-top);
+    left: var(--padding-horizontal);
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    height: 200px;
+  }
+
+  &__link {
+    color: var(--black);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__title {
+    font-size: 1em;
+    line-height: var(--base-line-hight);
+  }
+
+  &__prices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__price-main {
+    order: 1;
+    color: var(--black);
+    font-size: 1.2em;
+    font-weight: 700;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.3em;
+    }
+  }
+
+  &__price-old {
+    order: 2;
+    color: var(--light-text-gray);
+    text-decoration: line-through;
+    text-decoration-color: var(--secondary);
+    font-size: calc(1em - 2px);
+
+    & + #{$self}__price-main {
+      margin-right: .6em;
+      color: var(--secondary);
+    }
+  }
+
+  &__control-buttons {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 3.14em;
+    right: var(--padding-horizontal);
+  }
+}

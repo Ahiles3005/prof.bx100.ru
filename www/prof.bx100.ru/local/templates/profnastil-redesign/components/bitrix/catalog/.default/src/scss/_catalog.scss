@@ -1,0 +1,60 @@
+@import "../../../../../../../profnastil-redesign/src/scss/2-helpers/mixins";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.catalog {
+  font-size: 1rem;
+
+  &__title {
+    font-weight: 700;
+    font-size: 1.6em;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 2em;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.7em;
+    font-weight: 700;
+    margin-bottom: 1em;
+  }
+
+  &__count {
+    font-size: 1em;
+    color: var(--medium-gray);
+    border: 1px solid currentColor;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 1em;
+  }
+
+  &__banner {
+    height: 14em;
+    border-radius: var(--base-radius);
+    background-position: center;
+  }
+
+  &__show-more {
+    text-align: center;
+    font-weight: 600!important;
+    padding: calc(1em - 2px) 0!important;
+    transition-property: transform;
+    transition-duration: var(--transition-time);
+    background-color: var(--white)!important;
+
+    &:active {
+      transform: scale(1.03);
+    }
+
+    @include focus(focus-visible);
+  }
+
+  &__pagination {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: calc(var(--bs-gutter-x) / 2);
+  }
+}

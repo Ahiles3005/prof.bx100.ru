@@ -1,0 +1,35 @@
+.pagination {
+  display: flex;
+  font-size: calc(1rem - 2px);
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+
+  &__item {
+    text-decoration: none;
+    color: var(--muted-text-color);
+
+    &:not(:last-of-type) {
+      margin-right: 1em;
+    }
+
+    &[aria-current="true"] {
+      color: var(--accent);
+    }
+
+    &_icon {
+      svg {
+        fill: var(--accent);
+      }
+
+      &_back {
+        svg {
+          transform: rotate(.5turn);
+        }
+      }
+    }
+  }
+}

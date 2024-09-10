@@ -1,0 +1,23 @@
+.remove-filter-item {
+  $self: &;
+  &__value {
+    font-size: calc(1em - 2px) !important;
+    font-weight: 600;
+    transition: var(--transition-time);
+
+    &:hover {
+      background-color: var(--light-blue);
+      color: var(--accent);
+
+      #{$self}__icon {
+        color: var(--red);
+        transition: color var(--transition-time);
+      }
+    }
+
+    &__icon {
+      margin-left: .5em;
+    }
+  }
+
+}

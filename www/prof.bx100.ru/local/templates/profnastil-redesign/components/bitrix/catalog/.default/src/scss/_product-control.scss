@@ -1,0 +1,23 @@
+@import "../../../../../../../profnastil-redesign/src/scss/2-helpers/mixins";
+
+.product-control {
+  transition: transform var(--transition-time) var(--transition-timing-function);
+
+  & + & {
+    margin-top: .5em;
+  }
+
+  @include active;
+  @include focus(focus-visible);
+
+  &:hover {
+    svg {
+      fill: var(--main);
+    }
+  }
+
+  svg {
+    transition: fill var(--transition-time);
+    fill: var(--medium-gray);
+  }
+}
