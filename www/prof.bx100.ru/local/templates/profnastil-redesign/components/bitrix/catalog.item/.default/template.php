@@ -89,7 +89,12 @@ $id = $arElement['ID'];
         while ($arItems = $dbBasketItems->Fetch()) {
             $itInDelay = $arItems['PRODUCT_ID'];
         }
-        $inWishList = in_array($arResult["ID"], $dbBasketItems) || isset($itInDelay);
+
+        $dbBasketItemsArray = [];
+        if (is_array($dbBasketItems)) {
+            $dbBasketItemsArray = $dbBasketItems;
+        }
+        $inWishList = in_array($arResult["ID"], $dbBasketItemsArray) || isset($itInDelay);
         ?>
         <button class="product-control js-toggle-in-wishlist"
                 aria-label="Добавить товар в избранное"
