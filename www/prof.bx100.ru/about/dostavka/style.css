@@ -1,0 +1,25 @@
+.knopka{
+display: inline-block;
+line-height: 50px;
+width: 200px;
+background: #3a4d9f;
+border-radius: 8px;
+color: #fff;
+text-decoration: none;
+	}
+.knopka:hover span1{
+	display:none;
+
+}
+.knopka:hover:before{
+position:relative;
+left:20px;
+color:white;
+content: "Скачать";
+}
+
+.knopka img {
+padding: 10px;
+float: left;
+}
+
