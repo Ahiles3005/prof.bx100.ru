@@ -24,7 +24,7 @@ $gruntovka = $request->getPost("gruntovka");
 $area_walls = 0;
 foreach ($area_wall as $key => $value) {
     if (empty($value)) {
-        $value = $height_wall[$key] * $width_wall[$key];
+        $value = floatval($height_wall[$key]) * floatval($width_wall[$key]);
     }
     $area_walls += $value;
 }
@@ -124,7 +124,7 @@ if ($area_walls > 0) {
                 }
 
             } else {
-                $rashod = $item['VES'] / $item['RASKHOD_V_ODIN_SLOY'];
+                $rashod = floatval($item['VES']) / floatval($item['RASKHOD_V_ODIN_SLOY']);
                 $res = podborCrasci($rashod, $area_walls, $item, $theToleranceRange);
                 if ($res != false) {
                     if (!$res["NOT_VISIBLE"]) {
