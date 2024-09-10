@@ -87,7 +87,7 @@ $templateData = array(
 
                     if (isset ($arItem['VALUES']['MAX']['FILTERED_VALUE'])) $arItem["VALUES"]["MAX"]["VALUE"] = $arItem['VALUES']['MAX']['FILTERED_VALUE'];
 
-                    if ($arItem["VALUES"]["MAX"]["VALUE"] - $arItem["VALUES"]["MIN"]["VALUE"] <= 0)
+                    if (floatval($arItem["VALUES"]["MAX"]["VALUE"]) - floatval($arItem["VALUES"]["MIN"]["VALUE"]) <= 0)
                         continue;
                     ?>
                     <div class="bx_filter_parameters_box active">
