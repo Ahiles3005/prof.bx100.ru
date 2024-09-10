@@ -2,35 +2,31 @@
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
+
 global $APPLICATION;
-//if (ob_get_level() == 0) {
-//    ob_start();
-//}
+$strReturn = '';
+
+
+$strReturn = '<nav class="11bread-crumbs mb-4" aria-label="Breadcrumb">';
+$strReturn .= '<ul class="bread-crumbs__list list-reset d-flex flex-wrap">';
+
+
+foreach ($arResult as $key => $path) {
+    $strReturn .= '<li class="bread-crumbs__item">';
+    if (!empty($path['LINK']) && !Site::isCurrentPage($path['LINK'])) {
+        $strReturn .= '<a class="bread-crumbs__link" href="' . $path["LINK"] . '">' . $path["TITLE"] . '</a>';
+    } else {
+        $spanClass = Site::isCurrentPage($path['LINK']) ? 'aria-current="page"' : '';
+        $strReturn .= '<span class="bread-crumbs__last-crumb ' . $spanClass . '" >' . $path["TITLE"] . '</span>';
+    }
+
+    $strReturn .= '</li>';
+}
+
+$strReturn .= '</ul>';
+$strReturn .= '</nav>';
+return $strReturn;
 ?>
-<nav class="bread-crumbs mb-4" aria-label="Breadcrumb">
-    <ul class="bread-crumbs__list list-reset d-flex flex-wrap">
-        <?php foreach ($arResult as $key => $path): ?>
-            <li class="bread-crumbs__item">
-                <?php if (!empty($path['LINK']) && !Site::isCurrentPage($path['LINK'])): ?>
-                    <a class="bread-crumbs__link"
-                       href="<?php echo $path["LINK"]; ?>">
-                        <?php echo $path["TITLE"]; ?>
-                    </a>
-                <?php else: ?>
-                    <span class="bread-crumbs__last-crumb" <?=Site::isCurrentPage($path['LINK']) ? 'aria-current="page"' : '';?>>
-                            <?php echo $path["TITLE"]; ?>
-                        </span>
-                <?php endif; ?>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-</nav>
-<?php
-//if (ob_get_level() > 0) {
-//    $strReturn = ob_get_contents();
-//    ob_end_clean();
-//    return $strReturn;
-//} else {
-//    return '';
-//}
-?>
+
+
+
