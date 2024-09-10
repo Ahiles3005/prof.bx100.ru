@@ -36,7 +36,7 @@ while ($arItem = $dbBasketItems->GetNext()) {
             <svg width="38" height="38" aria-hidden="true">
                 <use xlink:href="#icon_balance"></use>
             </svg>
-            <span class="header-link-count header-link-count-compare js-compare-count"><?= count($_SESSION['CATALOG_COMPARE_LIST'][$catalogIblockId]['ITEMS']) ?></span>
+            <span class="header-link-count header-link-count-compare js-compare-count"><?= count($_SESSION['CATALOG_COMPARE_LIST'][$catalogIblockId]['ITEMS'] ?? []) ?></span>
         </a>
     </div>
     <div class="col border-start border-2">
