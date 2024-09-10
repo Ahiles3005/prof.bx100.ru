@@ -3,7 +3,9 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
 global $APPLICATION;
-ob_start();
+//if (ob_get_level() == 0) {
+//    ob_start();
+//}
 ?>
 <nav class="bread-crumbs mb-4" aria-label="Breadcrumb">
     <ul class="bread-crumbs__list list-reset d-flex flex-wrap">
@@ -24,7 +26,11 @@ ob_start();
     </ul>
 </nav>
 <?php
-$strReturn = ob_get_contents();
-ob_end_clean();
-return $strReturn;
+//if (ob_get_level() > 0) {
+//    $strReturn = ob_get_contents();
+//    ob_end_clean();
+//    return $strReturn;
+//} else {
+//    return '';
+//}
 ?>
