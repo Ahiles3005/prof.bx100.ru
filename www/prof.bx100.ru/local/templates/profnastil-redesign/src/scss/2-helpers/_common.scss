@@ -1,0 +1,17 @@
+.border-bottom {
+  &_on-dark {
+    --border-color: var(--dark-gray);
+  }
+}
+
+// Контейнер на всю ширину viewport, не смотря на ширину родителей
+.container {
+  &_full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+}

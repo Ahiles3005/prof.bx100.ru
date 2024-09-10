@@ -1,0 +1,91 @@
+@mixin resetBtn {
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+@mixin listReset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin placeholder($color, $size:"") {
+  &::-webkit-input-placeholder {
+    color: $color;
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+  &:-moz-placeholder {
+    color: $color;
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+  &::-moz-placeholder {
+    color: $color;
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+}
+
+@mixin focus($focus-type: focus) {
+  transition: .15s ease-in-out;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:#{$focus-type} {
+    box-shadow: var(--focus-shadow);
+    outline: none;
+  }
+}
+
+@mixin focus-input() {
+  transition: .15s ease-in-out;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: var(--secondary);
+  }
+}
+
+@mixin active {
+  &:active {
+    transform: scale(.99);
+  }
+}
+
+@mixin active-button {
+  //@include active;
+
+  &:active {
+    box-shadow: inset 0 0 10px 3px rgba(0, 0, 0, .20);
+  }
+}
