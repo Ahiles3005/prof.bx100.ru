@@ -254,7 +254,7 @@ if (isset($_SESSION["CATALOG_COMPARE_LIST"][$iblockid]["ITEMS"][$id])) {
                     </button>
                 </div>
 
-            <? elseif ((count($arResult["PRICES"]) > 0) || is_array($arElement["PRICE_MATRIX"])): ?>
+            <? elseif ((count($arResult["PRICES"] ?? []) > 0) || is_array($arElement["PRICE_MATRIX"])): ?>
                 <button class="catalog-item__add-to-cart button w-100"
                         type="button"
                         aria-label="<?= GetMessage("CATALOG_NOT_AVAILABLE") ?>">
