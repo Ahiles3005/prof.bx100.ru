@@ -244,7 +244,7 @@ $id = $arElement['ID'];
             Купить
             <span id="html-spinner"></span>
         </button>
-    <? elseif ((count($arResult["PRICES"]) > 0) || is_array($arElement["PRICE_MATRIX"])): ?>
+    <? elseif ((count($arResult["PRICES"] ?? []) > 0) || is_array($arElement["PRICE_MATRIX"])): ?>
         <button class="catalog-item__add-to-cart button w-100"
                 type="button"
                 aria-label="<?= GetMessage("CATALOG_NOT_AVAILABLE") ?>">
