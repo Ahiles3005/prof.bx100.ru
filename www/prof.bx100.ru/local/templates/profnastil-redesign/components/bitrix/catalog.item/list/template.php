@@ -87,7 +87,7 @@ if (isset($_SESSION["CATALOG_COMPARE_LIST"][$iblockid]["ITEMS"][$id])) {
             if (is_array($dbBasketItems)) {
                 $dbBasketItemsArray = $dbBasketItems;
             }
-            $inWishList = in_array($arResult["ID"], $dbBasketItems) || isset($itInDelay);
+            $inWishList = in_array($arResult["ID"], $dbBasketItemsArray) || isset($itInDelay);
             ?>
             <button class="product-control js-toggle-in-wishlist"
                     aria-label="Добавить товар в избранное"
