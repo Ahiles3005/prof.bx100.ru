@@ -46,7 +46,7 @@ $EVENT_MANAGER->addEventHandler("iblock", "OnAfterIBlockElementUpdate", ['ForAct
 class ForActioIblockUpdate
 {
 
-    function OnAfterIBlockElementUpdateHandler(&$arFields)
+    static function OnAfterIBlockElementUpdateHandler(&$arFields)
     {
 
         if (isset ($arFields['IBLOCK_ID']) && ((int)$arFields['IBLOCK_ID'] === Site::IBLOCK_ACTION_ID)) {
